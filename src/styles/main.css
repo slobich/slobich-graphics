@@ -14,6 +14,7 @@ html {
   align-items: center;
   justify-content: center;
   min-height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -26,7 +27,60 @@ body {
   text-align: left;
 }
 
-main > h1,
-main > p {
+img {
+  max-inline-size: none;
+  max-block-size: none;
+}
+
+.center {
+  position: relative;
+  z-index: 1;
+}
+
+.center > a h1,
+.center > p {
   text-align: center;
+}
+
+.center > p {
+  margin-top: 2.4rem;
+}
+
+.center > a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.center > a h1 {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.left,
+.right {
+  position: absolute;
+}
+
+.left {
+  top: 0;
+  left: 0;
+}
+
+.right {
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .left,
+  .right {
+    display: none;
+  }
 }

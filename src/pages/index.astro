@@ -1,6 +1,10 @@
 ---
 import 'the-new-css-reset/css/reset.css';
 import "../styles/main.css";
+import { Image } from 'astro:assets';
+import logo from '../images/logo.svg';
+import right from '../images/right.png';
+import left from '../images/left.png';
 ---
 <html lang="en">
   <head>
@@ -11,8 +15,16 @@ import "../styles/main.css";
 
   <body>
     <main>
-      <h1>5L081CH.6R4PH1C5</h1>
-      <p>Coming back soon</p>
+      <div class="center">
+        <a href={Astro.site}>
+          <Image src={logo} alt="Slobich Graphics logo" loading="eager" />
+          <h1>5L081CH.6R4PH1C5</h1>
+        </a>
+        <p>Coming back soon.</p>
+      </div>
+
+      <Image densities={[1, 2]} width={394} height={616} src={left} class="left" alt="" />
+      <Image densities={[1, 2]} width={558} height={568} src={right} class="right" alt="" />
     </main>
   </body>
 </html>
